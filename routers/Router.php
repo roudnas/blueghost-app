@@ -12,7 +12,7 @@ class Router {
 
 	public function render( Controller $controller ) : void 
 	{
-		extract($this->sanitize($controller->data()), EXTR_PREFIX_ALL, '');
+		extract($controller->data(), EXTR_PREFIX_ALL, '');
 		require("views/{$controller->view()}.php");
 	}
 
